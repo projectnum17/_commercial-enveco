@@ -1,0 +1,70 @@
+.about {
+  margin-bottom: 60px;
+
+  &__content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+
+    &-title {
+      h2 {
+        text-transform: uppercase;
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 50px;
+        letter-spacing: 0.02em;
+
+        color: $green-color;
+      }
+    }
+
+    &-descr {
+      &__subtitle {
+        max-width: 875px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 60px;
+
+        p {
+          width: 100%;
+          font-size: 28px;
+          font-weight: 400;
+          line-height: 39px;
+
+          color: $decr-color;
+        }
+      }
+
+      &__cards {
+        display: flex;
+        align-items: flex-start;
+        gap: 30px;
+
+        &-item {
+          max-width: 255px;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+
+          h3 {
+            font-size: 45px;
+            font-weight: 600;
+            line-height: 58px;
+
+            color: $green-color;
+          }
+
+          p {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 22px;
+
+            color: $decr-color;
+          }
+        }
+      }
+    }
+  }
+}
