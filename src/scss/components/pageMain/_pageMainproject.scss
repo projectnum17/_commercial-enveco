@@ -1,6 +1,14 @@
 .project {
   margin-bottom: 133px;
 
+  @media screen and (max-width: 1120px) {
+    margin-bottom: 90px;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 80px;
+  }
+
   &__content {
     &-title {
       margin-bottom: 30px;
@@ -110,4 +118,17 @@
 
 .project__content-link:hover a span {
   color: #fff;
+}
+
+.project {
+  .container {
+    .project__content {
+      margin-bottom: 0;
+      &-title {
+        h2 {
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
 }

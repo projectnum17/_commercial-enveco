@@ -19,6 +19,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components_header__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _components_pageActivity__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/pageActivity */ "./src/js/components/pageActivity.js");
 /* harmony import */ var _components_pageActivity__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_components_pageActivity__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _components_pageProjects__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/pageProjects */ "./src/js/components/pageProjects.js");
+/* harmony import */ var _components_pageProjects__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_components_pageProjects__WEBPACK_IMPORTED_MODULE_5__);
 //main page
 
 
@@ -26,6 +28,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 //header
+
 
 
 
@@ -202,6 +205,18 @@ phoneInput.addEventListener("blur", function () {
 
 if (document.getElementById("page1Identifier")) {
   //burger
+  // Определяем функцию closeMobileMenu() в глобальной области видимости
+  function closeMobileMenu() {
+    const mobileMenu = document.querySelector(".mobile-menu");
+    const body = document.body;
+    mobileMenu.style.transform = "translateY(-100%)";
+    setTimeout(() => {
+      mobileMenu.classList.remove("open");
+      body.style.overflow = "auto";
+    }, 300);
+  }
+
+  // Объявляем функцию toggleMobileMenu(), которая использует closeMobileMenu()
   function toggleMobileMenu() {
     const burgerButton = document.querySelector(".header__burger");
     const mobileMenu = document.querySelector(".mobile-menu");
@@ -213,11 +228,15 @@ if (document.getElementById("page1Identifier")) {
       body.style.overflow = "hidden";
     });
     closeButton.addEventListener("click", () => {
-      mobileMenu.style.transform = "translateY(-100%)";
-      setTimeout(() => {
-        mobileMenu.classList.remove("open");
-        body.style.overflow = "auto";
-      }, 300);
+      closeMobileMenu();
+    });
+    const links = mobileMenu.querySelectorAll("a");
+    links.forEach(link => {
+      if (link.getAttribute("id") === "contact") {
+        link.addEventListener("click", () => {
+          closeMobileMenu();
+        });
+      }
     });
   }
   toggleMobileMenu();
@@ -262,6 +281,16 @@ if (document.getElementById("page1Identifier")) {
 
 if (!document.getElementById("page1Identifier")) {
   //burger
+
+  function closeMobileMenu() {
+    const mobileMenu = document.querySelector(".mobile-menu");
+    const body = document.body;
+    mobileMenu.style.transform = "translateY(-100%)";
+    setTimeout(() => {
+      mobileMenu.classList.remove("open");
+      body.style.overflow = "auto";
+    }, 300);
+  }
   function toggleMobileMenu() {
     const burgerButton = document.querySelector(".header__burger-main");
     const mobileMenu = document.querySelector(".mobile-menu");
@@ -273,11 +302,15 @@ if (!document.getElementById("page1Identifier")) {
       body.style.overflow = "hidden";
     });
     closeButton.addEventListener("click", () => {
-      mobileMenu.style.transform = "translateY(-100%)";
-      setTimeout(() => {
-        mobileMenu.classList.remove("open");
-        body.style.overflow = "auto";
-      }, 300);
+      closeMobileMenu();
+    });
+    const links = mobileMenu.querySelectorAll("a");
+    links.forEach(link => {
+      if (link.getAttribute("id") === "contact") {
+        link.addEventListener("click", () => {
+          closeMobileMenu();
+        });
+      }
     });
   }
   toggleMobileMenu();
@@ -342,34 +375,124 @@ cards.forEach(function (card) {
 
 if (document.getElementById("page1Identifier")) {
   const swiper1 = new Swiper(".card-slider", {
+    loop: false,
     slidesPerView: 2,
     spaceBetween: 30,
-    //slidesPerGroup: 1,
-
-    breakpoints: {
-      1024: {
-        slidesPerView: 3.35
-      }
-    },
-    //loop: true,
-
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev"
-    }
-  });
-  const swiper2 = new Swiper(".card-slider__activity", {
-    slidesPerView: 2,
-    spaceBetween: 30,
-    //loop: true,
-
+    },
     breakpoints: {
-      1270: {
-        spaceBetween: 0,
-        slidesPerView: 3.35
+      1024: {
+        slidesPerView: 3
+      },
+      976: {
+        slidesPerView: 2.5
+      },
+      325: {
+        slidesPerView: 1.2
       }
     }
   });
+  const swiper2 = new Swiper(".card-slider__activity", {
+    loop: false,
+    slidesPerView: 3.5,
+    spaceBetween: 30,
+    breakpoints: {
+      1220: {
+        slidesPerView: 4
+      },
+      768: {
+        slidesPerView: 2.5
+      },
+      325: {
+        slidesPerView: 1.2
+      }
+    }
+  });
+  function setupTextToggle() {
+    const textBlock = document.getElementById("textBlock");
+    const readMoreButton = document.getElementById("readMoreButton");
+
+    // Оригинальный текст и текст для сокращенного отображения
+    const originalText = textBlock.innerHTML;
+    const shortText = "Enveco — українська спеціалізована проектно-консалтингова компанія, що надає комплексні інноваційні ...";
+
+    // Флаг для отслеживания состояния текста
+    let isShortened = true;
+
+    // Функция для сокращения/разворачивания текста
+    function toggleText() {
+      if (isShortened) {
+        textBlock.innerHTML = originalText;
+        readMoreButton.innerHTML = "Приховати";
+        isShortened = false;
+      } else {
+        textBlock.innerHTML = shortText;
+        readMoreButton.innerHTML = "Читати детальніше";
+        isShortened = true;
+      }
+    }
+
+    // Функция для проверки ширины окна и обновления текста
+    function checkWindowWidth() {
+      if (window.innerWidth <= 768) {
+        textBlock.innerHTML = shortText;
+      } else {
+        textBlock.innerHTML = originalText;
+      }
+    }
+
+    // Изначально проверяем ширину окна при загрузке страницы
+    checkWindowWidth();
+
+    // Добавляем обработчик события для кнопки "Читать дальше"
+    readMoreButton.addEventListener("click", toggleText);
+
+    // Добавляем обработчик события для изменения размера окна
+    window.addEventListener("resize", checkWindowWidth);
+  }
+
+  // Вызываем функцию для настройки текстового переключателя при загрузке страницы
+  setupTextToggle();
+}
+
+/***/ }),
+
+/***/ "./src/js/components/pageProjects.js":
+/*!*******************************************!*\
+  !*** ./src/js/components/pageProjects.js ***!
+  \*******************************************/
+/***/ (() => {
+
+if (document.getElementById("page3Identifier")) {
+  function toggleAdditionalProjects() {
+    // Получаем ссылку на кнопку "Більше проєктів" и блоки с дополнительными проектами
+    const showMoreButton = document.getElementById("show-more-projects");
+    const projectGroups = document.querySelectorAll(".project-group");
+
+    // Устанавливаем начальное состояние счетчика
+    let currentBlock = 0;
+
+    // Добавляем обработчик события клика на кнопку
+    showMoreButton.addEventListener("click", function (event) {
+      event.preventDefault(); // Предотвращаем переход по ссылке
+
+      // Показываем следующий блок
+      if (currentBlock < projectGroups.length) {
+        projectGroups[currentBlock].style.display = "grid";
+        currentBlock++;
+
+        // Если показали все блоки, скрываем кнопку
+        if (currentBlock === projectGroups.length) {
+          showMoreButton.style.display = "none";
+        }
+      }
+    });
+  }
+
+  // Вызываем функцию для инициализации
+  toggleAdditionalProjects();
 }
 
 /***/ })

@@ -1,5 +1,17 @@
 if (!document.getElementById("page1Identifier")) {
   //burger
+
+  function closeMobileMenu() {
+    const mobileMenu = document.querySelector(".mobile-menu");
+    const body = document.body;
+
+    mobileMenu.style.transform = "translateY(-100%)";
+    setTimeout(() => {
+      mobileMenu.classList.remove("open");
+      body.style.overflow = "auto";
+    }, 300);
+  }
+
   function toggleMobileMenu() {
     const burgerButton = document.querySelector(".header__burger-main");
     const mobileMenu = document.querySelector(".mobile-menu");
@@ -15,11 +27,16 @@ if (!document.getElementById("page1Identifier")) {
     });
 
     closeButton.addEventListener("click", () => {
-      mobileMenu.style.transform = "translateY(-100%)";
-      setTimeout(() => {
-        mobileMenu.classList.remove("open");
-        body.style.overflow = "auto";
-      }, 300);
+      closeMobileMenu();
+    });
+
+    const links = mobileMenu.querySelectorAll("a");
+    links.forEach((link) => {
+      if (link.getAttribute("id") === "contact") {
+        link.addEventListener("click", () => {
+          closeMobileMenu();
+        });
+      }
     });
   }
 

@@ -3,15 +3,51 @@
   padding: 0 30px;
   overflow: hidden;
 
-  &-container {
-    clip-path: polygon(2% 0, 100% 0, 100% 94%, 98% 100%, 0 100%, 0 4%);
+  @media screen and (max-width: 1120px) {
+    padding: 0;
+    margin-bottom: 100px;
+  }
 
+  @media screen and (max-width: 768px) {
+    margin-bottom: 80px;
+  }
+
+  &-container {
     background: $ligth-bg;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 100%;
+      background: #f7f7f7;
+      top: -50%;
+      left: 0%;
+      transform: rotate(45deg);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 100%;
+      background: #f7f7f7;
+      bottom: -50%;
+      right: 0%;
+      transform: rotate(45deg);
+    }
   }
 
   &__content {
     padding-top: 80px;
     padding-bottom: 76px;
+
+    @media screen and (max-width: 1120px) {
+      padding-top: 60px;
+      padding-bottom: 80px;
+    }
     &-title {
       h2 {
         text-transform: uppercase;
@@ -21,6 +57,23 @@
 
         color: $green-color;
         margin-bottom: 40px;
+
+        @media screen and (max-width: 1120px) {
+          font-size: 33px;
+          line-height: 46px;
+          letter-spacing: 0.02em;
+        }
+      }
+    }
+  }
+}
+
+.activity {
+  .activity-container {
+    .container {
+      //padding: 0;
+      @media screen and (max-width: 1120px) {
+        padding: 0;
       }
     }
   }
@@ -28,7 +81,6 @@
 
 .activity__content-cards {
   display: flex;
-  //gap: 30px;
   justify-content: space-between;
   margin-bottom: 40px;
 }
@@ -37,8 +89,7 @@
   position: relative;
   border: 1px solid #339e25;
   background: $ligth-bg;
-  width: 255px !important;
-  min-height: 255px;
+  height: 255px;
   display: flex;
   transition: 0.2s linear;
   background: transparent;
@@ -217,4 +268,86 @@
 
 .activity__content-link:hover a span {
   color: #fff;
+}
+
+.activity {
+  .container {
+    .activity__content {
+      .projects__cards-link {
+        a {
+          &::after,
+          &::before {
+            background: #ebf4ed;
+          }
+        }
+      }
+    }
+  }
+}
+
+.card-slider__activity {
+  .activity__content-cards {
+    .card-slider__slide {
+      a {
+        transition: 0.2s linear;
+        background: transparent;
+
+        h3 {
+          font-weight: 700;
+        }
+
+        .cards-arrow {
+          svg {
+            path {
+              transition: 0.2s linear;
+              stroke: #1d7e33;
+            }
+          }
+        }
+
+        .cards-symbol {
+          svg {
+            g {
+              path {
+                transition: 0.2s linear;
+                stroke: #1d7e33;
+              }
+            }
+          }
+        }
+
+        &:hover {
+          background: #1d7e33;
+          h3 {
+            color: #fff;
+            font-weight: 700;
+          }
+
+          .cards-arrow {
+            svg {
+              path {
+                transition: 0.2s linear;
+                stroke: #fff;
+              }
+            }
+          }
+
+          .cards-symbol {
+            svg {
+              g {
+                path {
+                  transition: 0.1s linear;
+                  stroke: #fff;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      h3 {
+        transition: 0.2s linear;
+      }
+    }
+  }
 }
