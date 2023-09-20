@@ -4,18 +4,17 @@
   background: #000;
   margin-bottom: 140px;
   padding-bottom: 140px;
-}
 
-/* =========СТАРЕ======== */
-
-/* .video-container {
-  div {
-    padding: 56.25% 0 0 0;
-    position: relative;
+  @media screen and (max-width: 1120px) {
+    padding-bottom: 60px;
+    margin-bottom: 100px;
   }
-} */
 
-/* =========СТАРЕ======== */
+  @media screen and (max-width: 768px) {
+    padding-bottom: 40px;
+    margin-bottom: 80px;
+  }
+}
 
 .video-container {
   position: absolute;
@@ -23,6 +22,7 @@
 
 .video-container__iframe {
   position: relative;
+  height: 100%;
 
   iframe {
     position: absolute;
@@ -30,16 +30,41 @@
     left: 50%;
     width: 100%;
     height: 100%;
-    width: 4000px;
-    height: 100vh;
-    /* width: 100%; */
-    transform: translate(-50%, -25%);
-    height: 2000px;
+    //width: 4000px;
+    height: 200vh;
+    width: 100vw;
+    transform: translate(-50%, -50%);
+
+    @media screen and (max-width: 1350px) {
+      width: 150vw;
+    }
+
+    @media screen and (max-width: 980px) {
+      width: 250vw;
+      height: 150vh;
+    }
+
+    @media screen and (max-height: 1250px) {
+      height: 150vh;
+    }
+
+    @media screen and (max-height: 759px) {
+      height: 200vh;
+    }
+
+    @media screen and (max-width: 520px) {
+      height: 900px;
+      width: 500vw;
+    }
   }
 }
 
 .intro__content {
   padding-top: 60px;
+  @media screen and (max-width: 768px) {
+    padding-top: 40px;
+  }
+
   &-title {
     display: flex;
     flex-direction: column;
@@ -55,6 +80,18 @@
       text-transform: uppercase;
 
       color: $text-color;
+
+      @media screen and (max-width: 1020px) {
+        font-size: 55px;
+        line-height: 61px;
+        max-width: 705px;
+      }
+
+      @media screen and (max-width: 768px) {
+        font-size: 33px;
+        line-height: 36px;
+        max-width: 100%;
+      }
     }
 
     p {
@@ -62,9 +99,14 @@
       font-size: 22px;
       font-weight: 700;
       line-height: 31px;
-      letter-spacing: 0em;
 
       color: $text-color;
+
+      @media screen and (max-width: 768px) {
+        font-size: 18px;
+        line-height: 25px;
+        max-width: 100%;
+      }
     }
   }
 }
@@ -84,6 +126,11 @@
   display: flex;
   gap: 30px;
 
+  @media screen and (max-width: 590px) {
+    flex-direction: column;
+    gap: 20px;
+  }
+
   &__item {
     position: relative;
     display: inline-flex;
@@ -94,6 +141,13 @@
     background: #fff;
     transition: 0.2s linear;
 
+    @media screen and (max-width: 375px) {
+      flex: 1;
+      max-width: 100%;
+
+      clip-path: polygon(0 0, 100% 0, 100% 88.4%, 92.5% 100%, 0 100%, 0 0);
+    }
+
     &:hover,
     &:active,
     &:focus {
@@ -103,6 +157,10 @@
     &-title {
       max-width: 100%;
       padding: 15px 35px 25px 15px;
+
+      @media screen and (max-width: 590px) {
+        padding: 15px 15px 25px 15px;
+      }
 
       h3 {
         width: 100%;
@@ -123,6 +181,22 @@
       max-width: 255px;
       padding: 1px;
       clip-path: polygon(0 0, 100% 0, 100% 89.4%, 92% 100%, 0 100%, 0 0);
+
+      @media screen and (max-width: 375px) {
+        max-width: 100%;
+        clip-path: polygon(0 0, 100% 0, 100% 76.4%, 92% 100%, 0 100%, 0 0);
+      }
+
+      img {
+        @media screen and (max-width: 375px) {
+          width: 100%;
+          height: 100px;
+        }
+
+        @media screen and (max-width: 590px) {
+          height: 100px;
+        }
+      }
     }
   }
 }
@@ -132,4 +206,15 @@
   right: 10px;
   top: 34.5%;
   z-index: 5;
+
+  @media screen and (max-width: 590px) {
+    top: 50%;
+    transform: translateY(-86%);
+  }
+}
+
+.uniq-pad {
+  @media screen and (max-width: 590px) {
+    padding: 15px 15px 50px 15px !important;
+  }
 }

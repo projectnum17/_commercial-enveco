@@ -1,6 +1,21 @@
 .develop {
   margin-bottom: 150px;
   overflow: hidden;
+
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 0;
+    z-index: -1;
+    height: 100%;
+    width: calc(255px + 40px + (100vw - 1267px) / 2);
+    background: #f7f7f7;
+    z-index: 5;
+  }
+
   &-container {
     max-width: 1140px;
 
@@ -11,6 +26,8 @@
 
   &__title {
     max-width: 254px;
+    position: relative;
+    z-index: 10;
     h2 {
       width: 100%;
       font-size: 36px;
@@ -25,9 +42,11 @@
 }
 
 .card-slider {
-  overflow: hidden;
-  width: 100%;
-  margin-right: -81px;
+  //overflow: hidden;
+  //width: 100%;
+  //margin-right: -81px;
+
+  width: calc(100% - 225px);
 }
 
 .card-slider__wrapper {
