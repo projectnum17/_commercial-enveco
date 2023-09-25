@@ -2,32 +2,51 @@
 <html lang="ua" class="page">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="theme-color" content="#111111">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /> -->
+  <link rel="icon" href="./img/favicon 512x512.svg" type="image/svg+xml" />
+
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="theme-color" content="#111111" />
+  <meta property="og:image" content="./img/open-graph.png" />
+  <meta
+    property="og:title"
+    content="Enveco - Відновлювана енергія для стабільного світу"
+  />
+
   <title>Enveco New Site</title>
-  <link rel="preload" href="fonts/ManropeRegular.woff2" as="font" type="font/woff2" crossorigin>
+  <link
+    rel="preload"
+    href="fonts/ManropeRegular.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+  />
 
-  <link rel="stylesheet" href="css/vendor.css">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/vendor.css" />
+  <link rel="stylesheet" href="css/main.css" />
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-  <script defer src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"
+  ></script>
   <script defer src="js/main.js"></script>
-
 </head>
 
 <body>
     <!-- header -->
-    <header class="header">
+    <header class="header" id="header">
   <div class="container header-wrap">
     <a href="/">
-      <img src="./img/footer-logo.svg" alt="Enveco" />
+      <img src="./img/newGreen-logo.svg" alt="Enveco" />
     </a>
 
     <nav class="header__nav-main">
@@ -37,11 +56,11 @@
             <li class="menu-item-activity">
               <a href="pageActivity.html"
                 >Напрями діяльності
-                <span>
+                <!-- <span>
                   <img src="./img/mobile-drop.svg" alt="" />
-                </span>
+                </span> -->
               </a>
-              <ul class="drop-menu-activity">
+              <!-- <ul class="drop-menu-activity">
                 <li class="drop-menu-item-activity">
                   <a href="#">Біоенергетика</a>
                 </li>
@@ -72,7 +91,7 @@
                 <li class="drop-menu-item-activity">
                   <a href="#">Консультування</a>
                 </li>
-              </ul>
+              </ul> -->
             </li>
           </ul>
         </div>
@@ -136,7 +155,7 @@
     <div class="mobile-menu__content">
       <div class="mobile-menu__content-header">
         <a href="/">
-          <img src="./img/footer-logo.svg" alt="Logo" />
+          <img src="./img/newGreen-logo.svg" alt="Logo" />
         </a>
 
         <div class="mobile-menu__content-header__close">
@@ -146,14 +165,14 @@
 
       <div class="mobile-menu__content-items">
         <div class="mobile-menu__content-list">
-          <a href="#!" class="accordion">
+          <a href="./pageActivity.html" class="accordion">
             Напрями діяльності
 
-            <span>
+            <!--  <span>
               <img src="./img/mobile-drop.svg" alt="Drop" />
-            </span>
+            </span> -->
           </a>
-          <div class="accordionDrop">
+          <!-- <div class="accordionDrop">
             <ul>
               <li>
                 <a href="#!">Біоенергетика</a>
@@ -184,7 +203,7 @@
                 <a href="pageActivity.html"> Всі напрями </a>
               </li>
             </ul>
-          </div>
+          </div> -->
         </div>
 
         <ul>
@@ -517,7 +536,7 @@
     <!-- footer -->
     <footer class="footer" id="footer">
   <div class="footer-ua">
-    <img src="./img/ua.svg" alt="UA" />
+    <img src="./img/ua.jpg" alt="UA" />
   </div>
 
   <div class="container">
@@ -714,9 +733,11 @@
               >
             </div>
 
-            <button id="submit" type="submit">
-              <span>Надіслати</span>
-            </button>
+            <div class="button-hidden">
+              <button id="submit" type="submit">
+                <span>Надіслати</span>
+              </button>
+            </div>
           </form>
         </div>
       </div>
@@ -727,7 +748,7 @@
         <div class="footer__foot-logo">
           <div class="footer__foot-logo__content">
             <a class="footer__foot-logo__content-thumb">
-              <img src="./img/footer-logo.svg" alt="Logo" />
+              <img src="./img/newGreen-logo.svg" alt="Logo" />
             </a>
 
             <div class="footer__foot-logo__content-copy">

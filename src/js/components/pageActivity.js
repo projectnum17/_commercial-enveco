@@ -1,4 +1,4 @@
-var cards = document.querySelectorAll(".activity-card");
+/* var cards = document.querySelectorAll(".activity-card");
 
 cards.forEach(function (card) {
   card.addEventListener("mouseover", function () {
@@ -11,3 +11,20 @@ cards.forEach(function (card) {
     btnText.textContent = "Детальніше";
   });
 });
+ */
+
+/* var cards = document.querySelectorAll(".activity-card");
+
+cards.forEach(function (card) {
+  var btnText = card.querySelector(".btnText");
+
+  card.addEventListener("mouseover", function () {
+    btnText.textContent = "Зв’язатись з нами";
+    btnText.classList.add("hovered");
+  });
+
+  card.addEventListener("mouseout", function () {
+    btnText.textContent = "Детальніше";
+    btnText.classList.remove("hovered");
+  });
+}); */

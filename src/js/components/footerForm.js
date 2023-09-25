@@ -23,6 +23,10 @@ function validateForm(event) {
     emailInput.style.border = "1px solid #7E1D3E";
     phoneInput.style.border = "1px solid #7E1D3E";
     submitButton.style.backgroundColor = "#191919";
+    submitButton.style.transition = "none"; // Убираем transition
+    submitButton.style.color = "#fff"; // Сохраняем цвет текста как унаследованный
+    submitButton.style.border = "1px solid transparent";
+    //submitButton.classList.add("hide-after");
   }
 
   // Валидация имени (только буквы)

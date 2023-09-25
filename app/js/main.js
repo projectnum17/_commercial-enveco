@@ -60,6 +60,10 @@ function validateForm(event) {
     emailInput.style.border = "1px solid #7E1D3E";
     phoneInput.style.border = "1px solid #7E1D3E";
     submitButton.style.backgroundColor = "#191919";
+    submitButton.style.transition = "none"; // Убираем transition
+    submitButton.style.color = "#fff"; // Сохраняем цвет текста как унаследованный
+    submitButton.style.border = "1px solid transparent";
+    //submitButton.classList.add("hide-after");
   }
 
   // Валидация имени (только буквы)
@@ -204,6 +208,45 @@ phoneInput.addEventListener("blur", function () {
 /***/ (() => {
 
 if (document.getElementById("page1Identifier")) {
+  //fixed header
+  window.addEventListener("scroll", function () {
+    var header = document.getElementById("header-main");
+    var logo = document.getElementById("logo");
+    var listItems = document.getElementsByClassName("main-list");
+    var langMain = document.getElementById("lang-main");
+    var langArrow = document.getElementById("main-arrow");
+    var mainBtn = document.getElementById("main-btn");
+    var mainBtnText = document.getElementById("main-btn__text");
+    var newBurger = document.getElementById("new-burger");
+    var newBurgerText = document.getElementById("new-burger__text");
+    var newBurgerThumb = document.getElementById("new-burger__thumb");
+    if (window.pageYOffset > 1) {
+      header.classList.add("another-header");
+      logo.src = "./img/newGreen-logo.svg";
+      langArrow.src = "./img/mobile-drop.svg";
+      for (var i = 0; i < listItems.length; i++) {
+        listItems[i].style.color = "#191919";
+      }
+      langMain.style.color = "#191919";
+      mainBtn.classList.add("hover-effect");
+      newBurger.style.background = "#1d7e33";
+      newBurgerText.style.color = "#fff";
+      newBurgerThumb.src = "./img/white-burger.svg";
+    } else {
+      header.classList.remove("another-header");
+      logo.src = "./img/newWhite-logo.svg";
+      for (var i = 0; i < listItems.length; i++) {
+        listItems[i].style.color = "#fff";
+      }
+      langMain.style.color = "#fff";
+      langArrow.src = "./img/arrowDrop.svg";
+      mainBtn.classList.remove("hover-effect");
+      newBurger.style.background = "#fff";
+      newBurgerText.style.color = "#191919";
+      newBurgerThumb.src = "./img/burger-item.svg";
+    }
+  });
+
   //burger
   // Определяем функцию closeMobileMenu() в глобальной области видимости
   function closeMobileMenu() {
@@ -280,6 +323,17 @@ if (document.getElementById("page1Identifier")) {
 /***/ (() => {
 
 if (!document.getElementById("page1Identifier")) {
+  //fixed header
+  window.addEventListener("scroll", function () {
+    var header = document.getElementById("header");
+    if (window.pageYOffset > 1) {
+      // Измените этот порог, если нужно
+      header.classList.add("sticky");
+    } else {
+      header.classList.remove("sticky");
+    }
+  });
+
   //burger
 
   function closeMobileMenu() {
@@ -353,17 +407,36 @@ if (!document.getElementById("page1Identifier")) {
   \*******************************************/
 /***/ (() => {
 
-var cards = document.querySelectorAll(".activity-card");
+/* var cards = document.querySelectorAll(".activity-card");
+
 cards.forEach(function (card) {
   card.addEventListener("mouseover", function () {
     var btnText = card.querySelector(".btnText");
     btnText.textContent = "Зв’язатись з нами";
   });
+
   card.addEventListener("mouseout", function () {
     var btnText = card.querySelector(".btnText");
     btnText.textContent = "Детальніше";
   });
 });
+ */
+
+/* var cards = document.querySelectorAll(".activity-card");
+
+cards.forEach(function (card) {
+  var btnText = card.querySelector(".btnText");
+
+  card.addEventListener("mouseover", function () {
+    btnText.textContent = "Зв’язатись з нами";
+    btnText.classList.add("hovered");
+  });
+
+  card.addEventListener("mouseout", function () {
+    btnText.textContent = "Детальніше";
+    btnText.classList.remove("hovered");
+  });
+}); */
 
 /***/ }),
 
@@ -467,31 +540,20 @@ if (document.getElementById("page1Identifier")) {
 
 if (document.getElementById("page3Identifier")) {
   function toggleAdditionalProjects() {
-    // Получаем ссылку на кнопку "Більше проєктів" и блоки с дополнительными проектами
     const showMoreButton = document.getElementById("show-more-projects");
     const projectGroups = document.querySelectorAll(".project-group");
-
-    // Устанавливаем начальное состояние счетчика
     let currentBlock = 0;
-
-    // Добавляем обработчик события клика на кнопку
     showMoreButton.addEventListener("click", function (event) {
-      event.preventDefault(); // Предотвращаем переход по ссылке
-
-      // Показываем следующий блок
+      event.preventDefault();
       if (currentBlock < projectGroups.length) {
         projectGroups[currentBlock].style.display = "grid";
         currentBlock++;
-
-        // Если показали все блоки, скрываем кнопку
         if (currentBlock === projectGroups.length) {
           showMoreButton.style.display = "none";
         }
       }
     });
   }
-
-  // Вызываем функцию для инициализации
   toggleAdditionalProjects();
 }
 

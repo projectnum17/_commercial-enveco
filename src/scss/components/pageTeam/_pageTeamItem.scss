@@ -1,12 +1,18 @@
 .team__intro {
   margin-bottom: 140px;
+  padding-top: 109px;
 
   @media screen and (max-width: 1020px) {
     margin-bottom: 100px;
   }
 
+  @media screen and (max-width: 976px) {
+    padding-top: 93px;
+  }
+
   @media screen and (max-width: 768px) {
     margin-bottom: 60px;
+    padding-top: 63px;
   }
 
   &-wrapper {
@@ -369,12 +375,18 @@
           padding: 20px 55px;
           background: #1d7e33;
           position: relative;
-          overflow: hidden;
+          //overflow: hidden;
+          border: 1px solid transparent;
 
           @media screen and (max-width: 365px) {
             padding: 20px 0;
             width: 100%;
           }
+
+          transition: 0.2s linear;
+          position: relative;
+          border: 1px solid transparent;
+          clip-path: none;
 
           &::after {
             content: "";
@@ -385,6 +397,7 @@
             top: -70%;
             left: 0%;
             transform: rotate(45deg);
+            border: 1px solid transparent;
           }
 
           &::before {
@@ -396,6 +409,7 @@
             bottom: -70%;
             right: 0%;
             transform: rotate(45deg);
+            border: 1px solid transparent;
           }
 
           span {
@@ -409,6 +423,24 @@
           }
         }
       }
+    }
+  }
+}
+.team__cards-banner__content-descr__right {
+  a {
+    transition: 0.2s linear;
+    border: 1px solid transparent;
+  }
+}
+
+.team__cards-banner__content-descr__right {
+  a:hover {
+    background: transparent;
+    border: 1px solid #fff;
+
+    &::after,
+    &::before {
+      border: 1px solid #fff;
     }
   }
 }

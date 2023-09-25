@@ -1,7 +1,11 @@
 .intro {
   position: relative;
   overflow: hidden;
-  background: #000;
+  //background: url(../img/intro-photo.png);
+  /* background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; */
+
   margin-bottom: 140px;
   padding-bottom: 140px;
 
@@ -18,11 +22,22 @@
 
 .video-container {
   position: absolute;
+  animation: fadeIn 4s forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .video-container__iframe {
   position: relative;
   height: 100%;
+  animation: fadeIn 4s forwards;
 
   iframe {
     position: absolute;
@@ -60,9 +75,9 @@
 }
 
 .intro__content {
-  padding-top: 60px;
+  padding-top: 161px;
   @media screen and (max-width: 768px) {
-    padding-top: 40px;
+    padding-top: 92px;
   }
 
   &-title {
@@ -137,21 +152,17 @@
     flex-direction: column;
     max-width: 255px;
     clip-path: polygon(0 0, 100% 0, 100% 89.4%, 92% 100%, 0 100%, 0 0);
+    position: relative;
 
     background: #fff;
     transition: 0.2s linear;
+    overflow: hidden;
 
     @media screen and (max-width: 375px) {
       flex: 1;
       max-width: 100%;
 
-      clip-path: polygon(0 0, 100% 0, 100% 88.4%, 92.5% 100%, 0 100%, 0 0);
-    }
-
-    &:hover,
-    &:active,
-    &:focus {
-      background: #ebf4ed;
+      clip-path: polygon(0 0, 100% 0, 100% 92.4%, 95.4% 100%, 0 100%, 0 0);
     }
 
     &-title {
@@ -173,6 +184,7 @@
     }
 
     &-photo {
+      overflow: hidden;
       flex: 1;
 
       display: flex;
@@ -180,14 +192,22 @@
       margin-top: auto;
       max-width: 255px;
       padding: 1px;
-      clip-path: polygon(0 0, 100% 0, 100% 89.4%, 92% 100%, 0 100%, 0 0);
+      // clip-path: polygon(0 0, 100% 0, 100% 89.4%, 92% 100%, 0 100%, 0 0);
 
       @media screen and (max-width: 375px) {
         max-width: 100%;
-        clip-path: polygon(0 0, 100% 0, 100% 76.4%, 92% 100%, 0 100%, 0 0);
+        // clip-path: polygon(0 0, 100% 0, 100% 76.4%, 92% 100%, 0 100%, 0 0);
       }
 
       img {
+        overflow: hidden;
+        //clip-path: polygon(0 0, 100% 0, 100% 89.4%, 92% 100%, 0 100%, 0 0);
+
+        @media screen and (max-width: 375px) {
+          max-width: 100%;
+          // clip-path: polygon(0 0, 100% 0, 100% 76.4%, 92% 100%, 0 100%, 0 0);
+        }
+
         @media screen and (max-width: 375px) {
           width: 100%;
           height: 100px;
@@ -216,5 +236,58 @@
 .uniq-pad {
   @media screen and (max-width: 590px) {
     padding: 15px 15px 50px 15px !important;
+  }
+}
+/*
+.intro__content-cards__item {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #ebf4ed;
+    transition: left 0.4s linear;
+    z-index: -1;
+  }
+}
+
+.intro__content-cards__item:hover {
+  &::before {
+    left: 0;
+  }
+}
+ */
+
+.animation {
+  min-height: 90px;
+  position: relative;
+  overflow: hidden;
+  .animation-rec {
+    overflow: hidden;
+
+    position: absolute;
+    top: -150%;
+    left: 0;
+    z-index: -1;
+    transform: scale(0);
+    transform-origin: left center;
+    transition: all 0.7s linear;
+    width: 300px;
+    height: 350px;
+
+    svg {
+      width: 100%;
+    }
+  }
+}
+
+.intro__content-cards__item:hover {
+  .animation {
+    .animation-rec {
+      transform: scale(1);
+    }
   }
 }

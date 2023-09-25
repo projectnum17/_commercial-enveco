@@ -1,4 +1,48 @@
 if (document.getElementById("page1Identifier")) {
+  //fixed header
+  window.addEventListener("scroll", function () {
+    var header = document.getElementById("header-main");
+    var logo = document.getElementById("logo");
+    var listItems = document.getElementsByClassName("main-list");
+    var langMain = document.getElementById("lang-main");
+    var langArrow = document.getElementById("main-arrow");
+    var mainBtn = document.getElementById("main-btn");
+    var mainBtnText = document.getElementById("main-btn__text");
+    var newBurger = document.getElementById("new-burger");
+    var newBurgerText = document.getElementById("new-burger__text");
+    var newBurgerThumb = document.getElementById("new-burger__thumb");
+
+    if (window.pageYOffset > 1) {
+      header.classList.add("another-header");
+      logo.src = "./img/newGreen-logo.svg";
+
+      langArrow.src = "./img/mobile-drop.svg";
+      for (var i = 0; i < listItems.length; i++) {
+        listItems[i].style.color = "#191919";
+      }
+      langMain.style.color = "#191919";
+
+      mainBtn.classList.add("hover-effect");
+      newBurger.style.background = "#1d7e33";
+      newBurgerText.style.color = "#fff";
+      newBurgerThumb.src = "./img/white-burger.svg";
+    } else {
+      header.classList.remove("another-header");
+      logo.src = "./img/newWhite-logo.svg";
+
+      for (var i = 0; i < listItems.length; i++) {
+        listItems[i].style.color = "#fff";
+      }
+      langMain.style.color = "#fff";
+      langArrow.src = "./img/arrowDrop.svg";
+
+      mainBtn.classList.remove("hover-effect");
+      newBurger.style.background = "#fff";
+      newBurgerText.style.color = "#191919";
+      newBurgerThumb.src = "./img/burger-item.svg";
+    }
+  });
+
   //burger
   // Определяем функцию closeMobileMenu() в глобальной области видимости
   function closeMobileMenu() {

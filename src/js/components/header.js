@@ -1,4 +1,15 @@
 if (!document.getElementById("page1Identifier")) {
+  //fixed header
+  window.addEventListener("scroll", function () {
+    var header = document.getElementById("header");
+    if (window.pageYOffset > 1) {
+      // Измените этот порог, если нужно
+      header.classList.add("sticky");
+    } else {
+      header.classList.remove("sticky");
+    }
+  });
+
   //burger
 
   function closeMobileMenu() {

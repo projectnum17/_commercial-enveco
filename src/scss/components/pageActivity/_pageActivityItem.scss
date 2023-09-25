@@ -1,12 +1,18 @@
 .activity__intro {
   margin-bottom: 140px;
+  padding-top: 109px;
 
   @media screen and (max-width: 1020px) {
     margin-bottom: 100px;
   }
 
+  @media screen and (max-width: 976px) {
+    padding-top: 93px;
+  }
+
   @media screen and (max-width: 768px) {
     margin-bottom: 60px;
+    padding-top: 63px;
   }
 
   &-wrapper {
@@ -26,7 +32,7 @@
     &__img {
       height: 500px;
       max-width: 1440px;
-      /* clip-path: polygon(2% 0, 100% 0, 100% 95%, 98% 100%, 0 100%, 0 5%); */
+
       position: relative;
       overflow: hidden;
 
@@ -216,7 +222,7 @@
         line-height: 25px;
         text-align: center;
 
-        color: $decr-color;
+        color: #1d7e33;
 
         background: #fff;
         padding: 15px 0px;
@@ -224,7 +230,7 @@
         clip-path: polygon(6% 0, 100% 0, 100% 83%, 94% 100%, 0 100%, 0 16%);
         border: 1px solid transparent;
 
-        //transition: 0.2s linear;
+        transition: 0.4s linear;
         overflow: hidden;
 
         &::after {
@@ -236,8 +242,9 @@
           background: #fff;
           top: -24%;
           left: -4%;
-          //transition: 0.2s linear;
+          transition: all 0.2s linear;
           opacity: 0;
+          visibility: hidden;
         }
 
         &::before {
@@ -249,8 +256,9 @@
           background: #fff;
           bottom: -22%;
           right: -4%;
-          //transition: 0.2s linear;
+          transition: all 0.2s linear;
           opacity: 0;
+          visibility: hidden;
         }
       }
     }
@@ -267,6 +275,7 @@
         &::after,
         &::before {
           opacity: 1;
+          visibility: visible;
         }
       }
     }
@@ -274,8 +283,6 @@
 }
 
 .activity__all-cards__item-img {
-  /* clip-path: polygon(50% 0%, 100% 0, 100% 93%, 96% 100%, 0 100%, 0 0); */
-
   min-height: 300px;
   position: relative;
   overflow: hidden;
@@ -289,6 +296,7 @@
     bottom: -50%;
     right: 0%;
     transform: rotate(45deg);
+    z-index: 5;
   }
 
   img {
@@ -352,11 +360,9 @@
 }
 
 .activity__plus-cards__item {
-  //border: 1px solid #339e25;
   min-width: 255px;
   min-height: 255px;
 
-  /* clip-path: polygon(9% 0, 100% 0, 100% 91%, 91% 100%, 0 100%, 0 9%); */
   background: transparent;
   position: relative;
   overflow: hidden;
@@ -370,20 +376,6 @@
     clip-path: polygon(3% 0, 100% 0, 100% 91%, 97% 100%, 0 100%, 0 9%);
   }
 
-  /* &::after {
-    content: "";
-    position: absolute;
-    width: 1.5px;
-    height: 100%;
-    transform: rotate(45deg);
-    top: -42.5%;
-    left: 0%;
-    background: #339e25;
-
-    @media screen and (max-width: 768px) {
-      transform: rotate(53deg);
-    }
-  } */
   &::after {
     content: "";
     position: absolute;
@@ -413,21 +405,6 @@
     border: 1px solid #339e25;
     background: #f7f7f7;
   }
-
-  /* &::before {
-    content: "";
-    position: absolute;
-    width: 1.5px;
-    height: 100%;
-    transform: rotate(45deg);
-    bottom: -42%;
-    right: 0%;
-    background: #339e25;
-
-    @media screen and (max-width: 768px) {
-      transform: rotate(53deg);
-    }
-  } */
 
   a {
     border: 1px solid #339e25;
@@ -477,4 +454,26 @@
 
 .activity__plus-cards__item:hover .item-content__img {
   transform: rotate(90deg);
+}
+
+.activity__all-cards__item-img {
+  transition: 0.3s linear;
+
+  img {
+    transition: 0.4s linear;
+  }
+}
+
+.activity__all-cards__item {
+  a:hover {
+    .activity__all-cards__item-img {
+      img {
+        transform: scale(1.15);
+      }
+    }
+  }
+}
+
+.btnText {
+  transition: all 0.4s linear;
 }

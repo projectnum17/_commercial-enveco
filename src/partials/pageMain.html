@@ -1,4 +1,12 @@
-<section class="intro">
+<section
+  class="intro"
+  style="
+    background: url(./img/intro-photo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  "
+>
   <div class="video-container">
     <div class="video-container__iframe">
       <iframe
@@ -16,10 +24,10 @@
     </div>
   </div>
 
-  <div class="header-main">
+  <div class="header-main" id="header-main">
     <div class="container header-container">
       <a href="/">
-        <img src="./img/logo.svg" alt="Enveco" />
+        <img id="logo" src="./img/newWhite-logo.svg" alt="Enveco" />
       </a>
 
       <nav class="header__nav">
@@ -27,13 +35,13 @@
           <div class="menu-wrap-activity">
             <ul class="menu-activity">
               <li class="menu-item-activity">
-                <a href="pageActivity.html"
+                <a class="transition main-list" href="pageActivity.html"
                   >Напрями діяльності
-                  <span>
+                  <!-- <span>
                     <img src="./img/arrowDrop.svg" alt="" />
-                  </span>
+                  </span> -->
                 </a>
-                <ul class="drop-menu-activity">
+                <!-- <ul class="drop-menu-activity">
                   <li class="drop-menu-item-activity">
                     <a href="#">Біоенергетика</a>
                   </li>
@@ -64,21 +72,40 @@
                   <li class="drop-menu-item-activity">
                     <a href="#">Консультування</a>
                   </li>
-                </ul>
+                </ul> -->
               </li>
             </ul>
           </div>
 
           <li>
-            <a title="Проєкти" href="pageProjects.html"> Проєкти </a>
+            <a
+              class="transition main-list"
+              title="Проєкти"
+              href="pageProjects.html"
+            >
+              Проєкти
+            </a>
           </li>
 
           <li>
-            <a title="Команда" href="pageTeam.html"> Команда </a>
+            <a
+              class="transition main-list"
+              title="Команда"
+              href="pageTeam.html"
+            >
+              Команда
+            </a>
           </li>
 
           <li>
-            <a id="contact" title="Контакти" href="#footer"> Контакти </a>
+            <a
+              class="transition main-list"
+              id="contact"
+              title="Контакти"
+              href="#footer"
+            >
+              Контакти
+            </a>
           </li>
         </ul>
       </nav>
@@ -88,10 +115,10 @@
           <div class="menu-wrap">
             <ul class="menu">
               <li class="menu-item">
-                <a href="#"
+                <a id="lang-main" href="#"
                   >Ua
                   <span>
-                    <img src="./img/arrowDrop.svg" alt="" />
+                    <img id="main-arrow" src="./img/arrowDrop.svg" alt="" />
                   </span>
                 </a>
                 <ul class="drop-menu">
@@ -108,17 +135,21 @@
         </div>
 
         <div class="header__btn-link">
-          <a title="Зв'язатись з нами" target="_blank" href="#!">
-            <span>Зв'язатись з нами</span>
+          <a id="main-btn" title="Зв'язатись з нами" target="_blank" href="#!">
+            <span id="main-btn__text">Зв'язатись з нами</span>
           </a>
         </div>
       </div>
 
-      <div class="header__burger">
-        <span class="burger-text"> Меню </span>
+      <div class="header__burger" id="new-burger">
+        <span id="new-burger__text" class="burger-text"> Меню </span>
 
         <span class="burger-img">
-          <img src="./img/burger-item.svg" alt="Burger" />
+          <img
+            id="new-burger__thumb"
+            src="./img/burger-item.svg"
+            alt="Burger"
+          />
         </span>
       </div>
     </div>
@@ -141,8 +172,23 @@
         <!-- 1 -->
 
         <a href="#!" class="intro__content-cards__item">
-          <div class="intro__content-cards__item-title">
-            <h3>Біоенергетика - CO2. Нейтрельне біопаливо</h3>
+          <div class="animation">
+            <div class="animation-rec">
+              <svg
+                viewBox="0 0 30 35"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15 0L30 8.75V26.25L15 35L0 26.25V8.75L15 0Z"
+                  fill="#EBF4ED"
+                />
+              </svg>
+            </div>
+
+            <div class="intro__content-cards__item-title">
+              <h3>Біоенергетика - CO2. Нейтрельне біопаливо</h3>
+            </div>
           </div>
 
           <div class="cards__item-photo__thumb">
@@ -159,8 +205,22 @@
 
         <!-- 2 -->
         <a href="#!" class="intro__content-cards__item">
-          <div class="intro__content-cards__item-title uniq-pad">
-            <h3>Консантинг</h3>
+          <div class="animation">
+            <div class="animation-rec">
+              <svg
+                viewBox="0 0 30 35"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15 0L30 8.75V26.25L15 35L0 26.25V8.75L15 0Z"
+                  fill="#EBF4ED"
+                />
+              </svg>
+            </div>
+            <div class="intro__content-cards__item-title">
+              <h3>Консталтинг</h3>
+            </div>
           </div>
 
           <div class="cards__item-photo__thumb">
@@ -168,7 +228,7 @@
           </div>
 
           <div class="intro__content-cards__item-photo">
-            <img src="./img/introCard-2.png" alt="Консантинг" />
+            <img src="./img/test1.jpg" alt="Консталтинг" />
           </div>
         </a>
       </div>
@@ -249,7 +309,34 @@
         <div class="card-slider__slide swiper-slide">
           <div class="card-slider__item">
             <a href="#!">
-              <div class="cards-arrow">
+              <div class="num">01</div>
+              <div class="text">
+                <h3>/ Аналіз ринку</h3>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="card-slider__slide swiper-slide">
+          <div class="card-slider__item">
+            <a href="#!">
+              <span class="num">02</span>
+
+              <div class="text">
+                <h3>/ Огляд ресурсів</h3>
+                <h3>/ Оренда землі</h3>
+                <h3>/ Розміщення</h3>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="card-slider__slide swiper-slide">
+          <div class="card-slider__item">
+            <a href="#!">
+              <span class="num">03</span>
+
+              <!-- <div class="cards-arrow">
                 <svg
                   width="40"
                   height="43"
@@ -270,7 +357,43 @@
                     stroke-linecap="square"
                   />
                 </svg>
+              </div> -->
+              <div class="text">
+                <h3>/ Контрагент</h3>
+                <h3>/ Шукаємо фінансування</h3>
+                <h3>/ Контракт</h3>
+                <h3>/ Переговори</h3>
               </div>
+            </a>
+          </div>
+        </div>
+        <div class="card-slider__slide swiper-slide">
+          <div class="card-slider__item">
+            <a href="#!">
+              <span class="num">04</span>
+
+              <!-- <div class="cards-arrow">
+                <svg
+                  width="40"
+                  height="43"
+                  viewBox="0 0 40 43"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2.99805 40.5241L36.4291 3.60449"
+                    stroke="#1D7E33"
+                    stroke-width="2.99962"
+                    stroke-linecap="square"
+                  />
+                  <path
+                    d="M3.90674 1.60889H38.237V39.5215"
+                    stroke="#1D7E33"
+                    stroke-width="2.99962"
+                    stroke-linecap="square"
+                  />
+                </svg>
+              </div> -->
               <h3>/ Аналіз ринку</h3>
             </a>
           </div>
@@ -278,7 +401,9 @@
         <div class="card-slider__slide swiper-slide">
           <div class="card-slider__item">
             <a href="#!">
-              <div class="cards-arrow">
+              <span class="num">05</span>
+
+              <!-- <div class="cards-arrow">
                 <svg
                   width="40"
                   height="43"
@@ -299,7 +424,7 @@
                     stroke-linecap="square"
                   />
                 </svg>
-              </div>
+              </div> -->
               <h3>/ Аналіз ринку</h3>
             </a>
           </div>
@@ -307,7 +432,9 @@
         <div class="card-slider__slide swiper-slide">
           <div class="card-slider__item">
             <a href="#!">
-              <div class="cards-arrow">
+              <span class="num">06</span>
+
+              <!-- <div class="cards-arrow">
                 <svg
                   width="40"
                   height="43"
@@ -328,7 +455,7 @@
                     stroke-linecap="square"
                   />
                 </svg>
-              </div>
+              </div> -->
               <h3>/ Аналіз ринку</h3>
             </a>
           </div>
@@ -336,7 +463,9 @@
         <div class="card-slider__slide swiper-slide">
           <div class="card-slider__item">
             <a href="#!">
-              <div class="cards-arrow">
+              <span class="num">07</span>
+
+              <!--  <div class="cards-arrow">
                 <svg
                   width="40"
                   height="43"
@@ -357,7 +486,7 @@
                     stroke-linecap="square"
                   />
                 </svg>
-              </div>
+              </div> -->
               <h3>/ Аналіз ринку</h3>
             </a>
           </div>
@@ -365,7 +494,9 @@
         <div class="card-slider__slide swiper-slide">
           <div class="card-slider__item">
             <a href="#!">
-              <div class="cards-arrow">
+              <span class="num">08</span>
+
+              <!-- <div class="cards-arrow">
                 <svg
                   width="40"
                   height="43"
@@ -386,94 +517,7 @@
                     stroke-linecap="square"
                   />
                 </svg>
-              </div>
-              <h3>/ Аналіз ринку</h3>
-            </a>
-          </div>
-        </div>
-        <div class="card-slider__slide swiper-slide">
-          <div class="card-slider__item">
-            <a href="#!">
-              <div class="cards-arrow">
-                <svg
-                  width="40"
-                  height="43"
-                  viewBox="0 0 40 43"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M2.99805 40.5241L36.4291 3.60449"
-                    stroke="#1D7E33"
-                    stroke-width="2.99962"
-                    stroke-linecap="square"
-                  />
-                  <path
-                    d="M3.90674 1.60889H38.237V39.5215"
-                    stroke="#1D7E33"
-                    stroke-width="2.99962"
-                    stroke-linecap="square"
-                  />
-                </svg>
-              </div>
-              <h3>/ Аналіз ринку</h3>
-            </a>
-          </div>
-        </div>
-        <div class="card-slider__slide swiper-slide">
-          <div class="card-slider__item">
-            <a href="#!">
-              <div class="cards-arrow">
-                <svg
-                  width="40"
-                  height="43"
-                  viewBox="0 0 40 43"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M2.99805 40.5241L36.4291 3.60449"
-                    stroke="#1D7E33"
-                    stroke-width="2.99962"
-                    stroke-linecap="square"
-                  />
-                  <path
-                    d="M3.90674 1.60889H38.237V39.5215"
-                    stroke="#1D7E33"
-                    stroke-width="2.99962"
-                    stroke-linecap="square"
-                  />
-                </svg>
-              </div>
-              <h3>/ Аналіз ринку</h3>
-            </a>
-          </div>
-        </div>
-        <div class="card-slider__slide swiper-slide">
-          <div class="card-slider__item">
-            <a href="#!">
-              <div class="cards-arrow">
-                <svg
-                  width="40"
-                  height="43"
-                  viewBox="0 0 40 43"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M2.99805 40.5241L36.4291 3.60449"
-                    stroke="#1D7E33"
-                    stroke-width="2.99962"
-                    stroke-linecap="square"
-                  />
-                  <path
-                    d="M3.90674 1.60889H38.237V39.5215"
-                    stroke="#1D7E33"
-                    stroke-width="2.99962"
-                    stroke-linecap="square"
-                  />
-                </svg>
-              </div>
+              </div> -->
               <h3>/ Аналіз ринку</h3>
             </a>
           </div>
@@ -551,7 +595,7 @@
     <div class="container">
       <div class="activity__content">
         <div class="activity__content-title">
-          <h2>Основні напрямки діяльності</h2>
+          <h2>Основні напрями діяльності</h2>
         </div>
 
         <div class="card-slider__activity swiper-container">
@@ -771,7 +815,7 @@
 
         <div class="projects__cards-link">
           <a href="./pageActivity.html">
-            <span> Всі напрямки </span>
+            <span> Всі напрями </span>
           </a>
         </div>
       </div>
@@ -866,7 +910,7 @@
   <div class="mobile-menu__content">
     <div class="mobile-menu__content-header">
       <a href="/">
-        <img src="./img/footer-logo.svg" alt="Logo" />
+        <img src="./img/newGreen-logo.svg" alt="Logo" />
       </a>
 
       <div class="mobile-menu__content-header__close">
@@ -876,14 +920,14 @@
 
     <div class="mobile-menu__content-items">
       <div class="mobile-menu__content-list">
-        <a href="#!" class="accordion">
+        <a href="pageActivity.html" class="accordion">
           Напрями діяльності
 
-          <span>
+          <!-- <span>
             <img src="./img/mobile-drop.svg" alt="Drop" />
-          </span>
+          </span> -->
         </a>
-        <div class="accordionDrop">
+        <!-- <div class="accordionDrop">
           <ul>
             <li>
               <a href="#!">Біоенергетика</a>
@@ -914,7 +958,7 @@
               <a href="pageActivity.html"> Всі напрями </a>
             </li>
           </ul>
-        </div>
+        </div> -->
       </div>
 
       <ul>

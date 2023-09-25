@@ -180,14 +180,72 @@
     }
   }
 }
+.num {
+  font-size: 45px;
+  font-weight: 600;
+  line-height: 54px;
 
-.card-slider__item:hover {
+  color: #1d7e33;
+  height: 100%;
+}
+
+.develop {
+  .develop-container {
+    .card-slider {
+      .card-slider__wrapper {
+        .card-slider__slide {
+          .card-slider__item {
+            a {
+              cursor: default;
+              h3 {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 22px;
+
+                color: #191919;
+                flex: auto;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.header-main {
+  .header-container {
+    a {
+      cursor: pointer;
+      img {
+        max-width: 160px;
+        max-height: 55px;
+      }
+    }
+  }
+}
+
+.mobile-menu {
+  &__content {
+    &-header {
+      a {
+        cursor: pointer;
+        display: block;
+        img {
+          max-width: 160px;
+          max-height: 55px;
+        }
+      }
+    }
+  }
+}
+/* .card-slider__item:hover {
   background: #ebf4ed;
 }
 
 .card-slider__item:hover a h3 {
   font-weight: 700;
-}
+} */
 
 .card-slider__item:hover .cards-arrow {
   transform: rotate(90deg);

@@ -1,8 +1,18 @@
 .projects__intro {
   margin-bottom: 80px;
+  padding-top: 109px;
 
   @media screen and (max-width: 1020px) {
     margin-bottom: 60px;
+  }
+
+  @media screen and (max-width: 976px) {
+    padding-top: 93px;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 60px;
+    padding-top: 63px;
   }
 
   &-wrapper {
@@ -146,6 +156,7 @@
           bottom: -50%;
           right: 0%;
           transform: rotate(45deg);
+          z-index: 2;
         }
 
         img {
@@ -173,11 +184,23 @@
   }
 }
 
+.projects__cards-items__card-thumb {
+  img {
+    transition: 0.4s linear;
+  }
+}
+
 .projects__cards-items__card {
   a:hover {
     .projects__cards-items__card-descr {
       h4 {
         color: #1d7e33;
+      }
+    }
+
+    .projects__cards-items__card-thumb {
+      img {
+        transform: scale(1.15);
       }
     }
   }
