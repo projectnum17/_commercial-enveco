@@ -21,7 +21,7 @@
     height: 100%;
     width: calc(255px + 40px + (100vw - 1128px) / 2);
     background: #f7f7f7;
-    z-index: 5;
+    z-index: 50;
 
     @media screen and (max-width: 1130px) {
       width: 290px;
@@ -59,7 +59,7 @@
   &__title {
     min-width: 255px;
     position: relative;
-    z-index: 10;
+    z-index: 50;
 
     @media screen and (max-width: 768px) {
       max-width: 200px;
@@ -324,6 +324,7 @@
   min-height: 65px;
   align-items: center;
   justify-content: center;
+  z-index: 50;
 
   @media screen and (max-width: 768px) {
     right: 20px;

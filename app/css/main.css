@@ -227,14 +227,8 @@ button span {
 }
 @media screen and (max-width: 1020px) {
   .header-main {
-    padding-top: 18px;
-    padding-bottom: 18px;
-  }
-}
-@media screen and (max-width: 768px) {
-  .header-main {
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 }
 
@@ -872,11 +866,14 @@ button span {
 }
 .mobile-menu__content-btn a:hover {
   background-color: transparent;
-  color: #fff;
-  border: 1px solid #fff;
+  color: #1d7e33;
+  border: 1px solid #1d7e33;
 }
 .mobile-menu__content-btn a:hover::after, .mobile-menu__content-btn a:hover::before {
-  border: 1px solid #fff;
+  border: 1px solid #1d7e33;
+}
+.mobile-menu__content-btn a:hover span {
+  color: #1d7e33;
 }
 .mobile-menu__content-btn a::after {
   content: "";
@@ -1141,6 +1138,11 @@ button span {
   border: 1px solid transparent;
   -webkit-clip-path: none;
   clip-path: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 25px;
+  text-align: center;
   /*  &::after {
            content: "";
            position: absolute;
@@ -1188,6 +1190,8 @@ button span {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
   border: 1px solid transparent;
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
 }
 .footer__head-form__item form button::before {
   content: "";
@@ -1201,15 +1205,17 @@ button span {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
   border: 1px solid transparent;
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
 }
 .footer__head-form__item form button:hover {
-  color: #fff;
+  color: #1d7e33;
   background: transparent;
-  border: 1px solid #fff;
+  border: 1px solid #1d7e33;
 }
 
 .footer__head-form__item form button:hover::after, .footer__head-form__item form button:hover::before {
-  border: 1px solid #fff;
+  border: 1px solid #1d7e33;
 }
 
 .footer__foot {
@@ -1459,12 +1465,6 @@ header {
   .header-wrap {
     padding-bottom: 20px;
     padding-top: 20px;
-  }
-}
-@media screen and (max-width: 768px) {
-  .header-wrap {
-    padding-bottom: 5px;
-    padding-top: 5px;
   }
 }
 
@@ -1758,7 +1758,7 @@ header {
 }
 @media screen and (max-width: 768px) {
   .intro__content {
-    padding-top: 92px;
+    padding-top: 122px;
   }
 }
 .intro__content-title {
@@ -1771,6 +1771,7 @@ header {
   flex-direction: column;
   gap: 20px;
   margin-bottom: 40px;
+  max-width: 840px;
 }
 .intro__content-title h1 {
   width: 100%;
@@ -1860,8 +1861,8 @@ header {
     -ms-flex: 1;
     flex: 1;
     max-width: 100%;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 92.4%, 95.4% 100%, 0 100%, 0 0);
-    clip-path: polygon(0 0, 100% 0, 100% 92.4%, 95.4% 100%, 0 100%, 0 0);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 89.4%, 93.4% 100%, 0 100%, 0 0);
+    clip-path: polygon(0 0, 100% 0, 100% 89.4%, 93.4% 100%, 0 100%, 0 0);
   }
 }
 .intro__content-cards__item-title {
@@ -1906,6 +1907,8 @@ header {
 @media screen and (max-width: 375px) {
   .intro__content-cards__item-photo img {
     max-width: 100%;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 79.4%, 93.4% 100%, 0 100%, 0 0);
+    clip-path: polygon(0 0, 100% 0, 100% 79.4%, 93.4% 100%, 0 100%, 0 0);
   }
 }
 @media screen and (max-width: 375px) {
@@ -2189,7 +2192,7 @@ header {
   height: 100%;
   width: calc(295px + (100vw - 1128px) / 2);
   background: #f7f7f7;
-  z-index: 5;
+  z-index: 50;
 }
 @media screen and (max-width: 1130px) {
   .develop::before {
@@ -2234,7 +2237,7 @@ header {
 .develop__title {
   min-width: 255px;
   position: relative;
-  z-index: 10;
+  z-index: 50;
 }
 @media screen and (max-width: 768px) {
   .develop__title {
@@ -2478,6 +2481,7 @@ header {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  z-index: 50;
 }
 @media screen and (max-width: 768px) {
   .card-slider__pagination {
@@ -2925,7 +2929,7 @@ header {
 @media screen and (max-width: 768px) {
   .activity__intro {
     margin-bottom: 60px;
-    padding-top: 63px;
+    padding-top: 103px;
   }
 }
 .activity__intro-wrapper {
@@ -3304,6 +3308,13 @@ header {
   -webkit-transition: 0.2s linear;
   transition: 0.2s linear;
 }
+@media screen and (max-width: 844px) {
+  .activity__plus-cards__item {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
+}
 @media screen and (max-width: 768px) {
   .activity__plus-cards__item {
     width: 100%;
@@ -3437,7 +3448,7 @@ header {
 @media screen and (max-width: 768px) {
   .projects__intro {
     margin-bottom: 60px;
-    padding-top: 63px;
+    padding-top: 103px;
   }
 }
 .projects__intro-wrapper {
@@ -3734,7 +3745,7 @@ header {
 @media screen and (max-width: 768px) {
   .team__intro {
     margin-bottom: 60px;
-    padding-top: 63px;
+    padding-top: 103px;
   }
 }
 .team__intro-wrapper {
@@ -4145,6 +4156,8 @@ header {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
   border: 1px solid transparent;
+  -webkit-transition: border 0.2s linear;
+  transition: border 0.2s linear;
 }
 .team__cards-banner__content-descr__right a::before {
   content: "";
@@ -4158,6 +4171,8 @@ header {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
   border: 1px solid transparent;
+  -webkit-transition: border 0.2s linear;
+  transition: border 0.2s linear;
 }
 .team__cards-banner__content-descr__right a span {
   font-size: 18px;
@@ -4166,6 +4181,8 @@ header {
   letter-spacing: 0em;
   text-align: center;
   color: #fff;
+  -webkit-transition: 0.2 linear;
+  transition: 0.2 linear;
 }
 
 .team__cards-banner__content-descr__right a {
@@ -4176,10 +4193,13 @@ header {
 
 .team__cards-banner__content-descr__right a:hover {
   background: transparent;
-  border: 1px solid #fff;
+  border: 1px solid #1d7e33;
 }
 .team__cards-banner__content-descr__right a:hover::after, .team__cards-banner__content-descr__right a:hover::before {
-  border: 1px solid #fff;
+  border: 1px solid #1d7e33;
+}
+.team__cards-banner__content-descr__right a:hover span {
+  color: #1d7e33;
 }
 
 .team__card {
@@ -4194,7 +4214,7 @@ header {
 }
 @media screen and (max-width: 768px) {
   .team__card {
-    padding-top: 60px;
+    padding-top: 90px;
     margin-bottom: 80px;
   }
 }
@@ -4381,7 +4401,7 @@ header {
 @media screen and (max-width: 768px) {
   .project__intro {
     margin-bottom: 60px;
-    padding-top: 63px;
+    padding-top: 103px;
   }
 }
 .project__intro-wrapper {
@@ -4635,7 +4655,7 @@ header {
 @media screen and (max-width: 768px) {
   .activity-article__intro {
     margin-bottom: 60px;
-    padding-top: 63px;
+    padding-top: 103px;
   }
 }
 .activity-article__intro-wrapper {
@@ -4864,7 +4884,7 @@ header {
 @media screen and (max-width: 768px) {
   .service__intro {
     margin-bottom: 60px;
-    padding-top: 63px;
+    padding-top: 103px;
   }
 }
 .service__intro-wrapper {

@@ -218,6 +218,11 @@
         position: relative;
         border: 1px solid transparent;
         clip-path: none;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 25px;
+        text-align: center;
 
         &::after {
           content: "";
@@ -229,6 +234,7 @@
           left: 0%;
           transform: rotate(45deg);
           border: 1px solid transparent;
+          transition: 0.2s linear;
         }
 
         &::before {
@@ -241,6 +247,7 @@
           right: 0%;
           transform: rotate(45deg);
           border: 1px solid transparent;
+          transition: 0.2s linear;
         }
 
         /*  &::after {
@@ -278,9 +285,9 @@
         }
  */
         &:hover {
-          color: #fff;
+          color: #1d7e33;
           background: transparent;
-          border: 1px solid #fff;
+          border: 1px solid #1d7e33;
         }
       }
     }
@@ -291,7 +298,7 @@
     button:hover {
       &::after,
       &::before {
-        border: 1px solid #fff;
+        border: 1px solid #1d7e33;
       }
     }
   }

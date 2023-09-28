@@ -12,7 +12,7 @@
 
   @media screen and (max-width: 768px) {
     margin-bottom: 60px;
-    padding-top: 63px;
+    padding-top: 103px;
   }
 
   &-wrapper {
@@ -367,6 +367,10 @@
   position: relative;
   overflow: hidden;
   transition: 0.2s linear;
+
+  @media screen and (max-width: 844px) {
+    flex: 1;
+  }
 
   @media screen and (max-width: 768px) {
     width: 100%;
