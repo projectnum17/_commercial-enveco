@@ -211,19 +211,27 @@ if (document.getElementById("page1Identifier")) {
   //fixed header
   window.addEventListener("scroll", function () {
     var header = document.getElementById("header-main");
-    var logo = document.getElementById("logo");
     var listItems = document.getElementsByClassName("main-list");
     var langMain = document.getElementById("lang-main");
-    var langArrow = document.getElementById("main-arrow");
     var mainBtn = document.getElementById("main-btn");
     var mainBtnText = document.getElementById("main-btn__text");
     var newBurger = document.getElementById("new-burger");
     var newBurgerText = document.getElementById("new-burger__text");
     var newBurgerThumb = document.getElementById("new-burger__thumb");
+    var logoDefault = document.getElementById("logo-default");
+    var logoAlt = document.getElementById("logo-alt");
+    var arrowDefault = document.getElementById("default-arrow");
+    var arrowHidden = document.getElementById("hidden-arrow");
+    var burgerDefault = document.getElementById("default-burger");
+    var burgerHidden = document.getElementById("hidden-burger");
     if (window.pageYOffset > 1) {
       header.classList.add("another-header");
-      logo.src = "./img/newGreen-logo.svg";
-      langArrow.src = "./img/mobile-drop.svg";
+      logoDefault.style.display = "none";
+      logoAlt.style.display = "block";
+      arrowDefault.style.display = "none";
+      arrowHidden.style.display = "block";
+      burgerDefault.style.display = "none";
+      burgerHidden.style.display = "block";
       for (var i = 0; i < listItems.length; i++) {
         listItems[i].style.color = "#191919";
       }
@@ -231,19 +239,21 @@ if (document.getElementById("page1Identifier")) {
       mainBtn.classList.add("hover-effect");
       newBurger.style.background = "#1d7e33";
       newBurgerText.style.color = "#fff";
-      newBurgerThumb.src = "./img/white-burger.svg";
     } else {
       header.classList.remove("another-header");
-      logo.src = "./img/newWhite-logo.svg";
+      logoDefault.style.display = "block";
+      logoAlt.style.display = "none";
+      arrowDefault.style.display = "block";
+      arrowHidden.style.display = "none";
+      burgerDefault.style.display = "block";
+      burgerHidden.style.display = "none";
       for (var i = 0; i < listItems.length; i++) {
         listItems[i].style.color = "#fff";
       }
       langMain.style.color = "#fff";
-      langArrow.src = "./img/arrowDrop.svg";
       mainBtn.classList.remove("hover-effect");
       newBurger.style.background = "#fff";
       newBurgerText.style.color = "#191919";
-      newBurgerThumb.src = "./img/burger-item.svg";
     }
   });
 
@@ -483,83 +493,6 @@ if (document.getElementById("page1Identifier")) {
       }
     }
   });
-
-  /*   function setupTextToggle() {
-    const textBlock = document.getElementById("textBlock");
-    const readMoreButton = document.getElementById("readMoreButton");
-     // Оригинальный текст и текст для сокращенного отображения
-    const originalText = textBlock.innerHTML;
-    const shortText =
-      "Enveco — українська спеціалізована проектно-консалтингова компанія, що надає комплексні інноваційні ...";
-     // Флаг для отслеживания состояния текста
-    let isShortened = true;
-     // Функция для сокращения/разворачивания текста
-    function toggleText() {
-      if (isShortened) {
-        textBlock.innerHTML = originalText;
-        readMoreButton.innerHTML = "Приховати";
-        isShortened = false;
-      } else {
-        textBlock.innerHTML = shortText;
-        readMoreButton.innerHTML = "Читати детальніше";
-        isShortened = true;
-      }
-    }
-     // Функция для проверки ширины окна и обновления текста
-    function checkWindowWidth() {
-      if (window.innerWidth <= 768) {
-        textBlock.innerHTML = shortText;
-      } else {
-        textBlock.innerHTML = originalText;
-      }
-    }
-     // Изначально проверяем ширину окна при загрузке страницы
-    checkWindowWidth();
-     // Добавляем обработчик события для кнопки "Читать дальше"
-    readMoreButton.addEventListener("click", toggleText);
-     // Добавляем обработчик события для изменения размера окна
-    window.addEventListener("resize", checkWindowWidth);
-  }
-   // Вызываем функцию для настройки текстового переключателя при загрузке страницы
-  setupTextToggle(); */
-
-  ////1//1/1//1/1//1
-
-  /* function setupTextToggle() {
-    const textBlock = document.getElementById("textBlock");
-    const readMoreButton = document.getElementById("readMoreButton");
-     const originalText = textBlock.innerHTML;
-    const shortText =
-      "Enveco — українська спеціалізована проектно-консалтингова компанія, що надає комплексні інноваційні ...";
-     let isShortened = true;
-     function toggleText() {
-      if (isShortened) {
-        textBlock.innerHTML = originalText;
-        readMoreButton.innerHTML = "Приховати";
-        isShortened = false;
-      } else {
-        textBlock.innerHTML = shortText;
-        readMoreButton.innerHTML = "Читати детальніше";
-        isShortened = true;
-      }
-    }
-     function checkWindowWidth() {
-      if (window.innerWidth <= 768 && isShortened) {
-        // Если ширина окна меньше или равна 768 пикселей
-        // и текст сейчас сокращен, то оставляем его таким
-        textBlock.innerHTML = shortText;
-      } else {
-        // В остальных случаях показываем текст в его текущем состоянии
-        textBlock.innerHTML = isShortened ? shortText : originalText;
-      }
-    }
-     checkWindowWidth();
-     readMoreButton.addEventListener("click", toggleText);
-     // Добавляем обработчик события для изменения размера окна
-    window.addEventListener("resize", checkWindowWidth);
-  }
-   setupTextToggle(); */
-
   function setupTextToggle() {
     const textBlock = document.getElementById("textBlock");
     const readMoreButton = document.getElementById("readMoreButton");
@@ -580,20 +513,15 @@ if (document.getElementById("page1Identifier")) {
     }
     function checkWindowWidth() {
       if (window.innerWidth <= 768) {
-        // Если ширина окна меньше или равна 768 пикселей,
-        // и только если текст был сокращен, то оставляем его таким
         if (isShortened) {
           textBlock.innerHTML = shortText;
         }
       } else {
-        // В остальных случаях показываем текст в его текущем состоянии
         textBlock.innerHTML = isShortened ? shortText : originalText;
       }
     }
     checkWindowWidth();
     readMoreButton.addEventListener("click", toggleText);
-
-    // Добавляем обработчик события для изменения размера окна
     window.addEventListener("resize", checkWindowWidth);
   }
   setupTextToggle();

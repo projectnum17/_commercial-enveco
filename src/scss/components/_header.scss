@@ -29,7 +29,6 @@ header {
   @media screen and (max-width: 976px) {
     padding-bottom: 20px;
     padding-top: 20px;
-    //margin-bottom: 10px;
   }
 }
 .header {
@@ -238,6 +237,45 @@ header {
 
     img {
       width: 100%;
+    }
+  }
+}
+
+.header-wrap {
+  nav {
+    @media screen and (max-width: 976px) {
+      display: none;
+    }
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 23px;
+
+      li {
+        a {
+          display: block;
+          width: max-content;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 22px;
+
+          color: #191919;
+          transition: 0.1s linear;
+
+          &:hover {
+            color: #1d7e33 !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.menu-item {
+  a {
+    span {
+      display: flex;
     }
   }
 }

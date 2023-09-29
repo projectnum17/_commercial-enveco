@@ -72,7 +72,7 @@ img {
   padding: 0 30px;
 }
 
-input {
+input:not([type="submit"]) {
   width: 100%;
   font-family: "Manrope";
   font-size: 16px;
@@ -131,4 +131,16 @@ button {
     line-height: 25px;
     text-align: center;
   }
+}
+
+input[type="submit"] {
+  transition: 0.2s linear;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 25px;
+  text-align: center;
+  background: transparent;
 }

@@ -2,21 +2,35 @@ if (document.getElementById("page1Identifier")) {
   //fixed header
   window.addEventListener("scroll", function () {
     var header = document.getElementById("header-main");
-    var logo = document.getElementById("logo");
     var listItems = document.getElementsByClassName("main-list");
     var langMain = document.getElementById("lang-main");
-    var langArrow = document.getElementById("main-arrow");
     var mainBtn = document.getElementById("main-btn");
     var mainBtnText = document.getElementById("main-btn__text");
     var newBurger = document.getElementById("new-burger");
     var newBurgerText = document.getElementById("new-burger__text");
     var newBurgerThumb = document.getElementById("new-burger__thumb");
 
+    var logoDefault = document.getElementById("logo-default");
+    var logoAlt = document.getElementById("logo-alt");
+
+    var arrowDefault = document.getElementById("default-arrow");
+    var arrowHidden = document.getElementById("hidden-arrow");
+
+    var burgerDefault = document.getElementById("default-burger");
+    var burgerHidden = document.getElementById("hidden-burger");
+
     if (window.pageYOffset > 1) {
       header.classList.add("another-header");
-      logo.src = "./img/newGreen-logo.svg";
 
-      langArrow.src = "./img/mobile-drop.svg";
+      logoDefault.style.display = "none";
+      logoAlt.style.display = "block";
+
+      arrowDefault.style.display = "none";
+      arrowHidden.style.display = "block";
+
+      burgerDefault.style.display = "none";
+      burgerHidden.style.display = "block";
+
       for (var i = 0; i < listItems.length; i++) {
         listItems[i].style.color = "#191919";
       }
@@ -25,21 +39,26 @@ if (document.getElementById("page1Identifier")) {
       mainBtn.classList.add("hover-effect");
       newBurger.style.background = "#1d7e33";
       newBurgerText.style.color = "#fff";
-      newBurgerThumb.src = "./img/white-burger.svg";
     } else {
       header.classList.remove("another-header");
-      logo.src = "./img/newWhite-logo.svg";
+
+      logoDefault.style.display = "block";
+      logoAlt.style.display = "none";
+
+      arrowDefault.style.display = "block";
+      arrowHidden.style.display = "none";
+
+      burgerDefault.style.display = "block";
+      burgerHidden.style.display = "none";
 
       for (var i = 0; i < listItems.length; i++) {
         listItems[i].style.color = "#fff";
       }
       langMain.style.color = "#fff";
-      langArrow.src = "./img/arrowDrop.svg";
 
       mainBtn.classList.remove("hover-effect");
       newBurger.style.background = "#fff";
       newBurgerText.style.color = "#191919";
-      newBurgerThumb.src = "./img/burger-item.svg";
     }
   });
 

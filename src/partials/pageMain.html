@@ -27,85 +27,36 @@
   <div class="header-main" id="header-main">
     <div class="container header-container">
       <a href="/">
-        <img id="logo" src="./img/newWhite-logo.svg" alt="Enveco" />
+        <img
+          id="logo-default"
+          class="logo"
+          src="./img/newWhite-logo.svg"
+          alt="Enveco"
+        />
+        <img
+          id="logo-alt"
+          class="logo"
+          src="./img/newGreen-logo.svg"
+          alt="Enveco"
+        />
       </a>
 
-      <nav class="header__nav">
+      <nav>
         <ul>
-          <div class="menu-wrap-activity">
-            <ul class="menu-activity">
-              <li class="menu-item-activity">
-                <a class="transition main-list" href="pageActivity.html"
-                  >Напрями діяльності
-                  <!-- <span>
-                    <img src="./img/arrowDrop.svg" alt="" />
-                  </span> -->
-                </a>
-                <!-- <ul class="drop-menu-activity">
-                  <li class="drop-menu-item-activity">
-                    <a href="#">Біоенергетика</a>
-                  </li>
-                  <li class="drop-menu-item-activity">
-                    <a href="#">Вітроенергетика</a>
-                  </li>
-                  <li class="drop-menu-item-activity">
-                    <a href="#">Сонячна енергія</a>
-                  </li>
-                  <li class="drop-menu-item-activity">
-                    <a href="#">Гідроенергетика</a>
-                  </li>
-                  <li class="drop-menu-item-activity">
-                    <a href="#">Консультування</a>
-                  </li>
-                  <li class="drop-menu-item-activity">
-                    <a href="#">Біоенергетика</a>
-                  </li>
-                  <li class="drop-menu-item-activity">
-                    <a href="#">Вітроенергетика</a>
-                  </li>
-                  <li class="drop-menu-item-activity">
-                    <a href="#">Сонячна енергія</a>
-                  </li>
-                  <li class="drop-menu-item-activity">
-                    <a href="#">Гідроенергетика</a>
-                  </li>
-                  <li class="drop-menu-item-activity">
-                    <a href="#">Консультування</a>
-                  </li>
-                </ul> -->
-              </li>
-            </ul>
-          </div>
-
           <li>
-            <a
-              class="transition main-list"
-              title="Проєкти"
-              href="pageProjects.html"
-            >
-              Проєкти
-            </a>
+            <a href="pageActivity.html">Напрями діяльності </a>
           </li>
 
           <li>
-            <a
-              class="transition main-list"
-              title="Команда"
-              href="pageTeam.html"
-            >
-              Команда
-            </a>
+            <a title="Проєкти" href="pageProjects.html"> Проєкти </a>
           </li>
 
           <li>
-            <a
-              class="transition main-list"
-              id="contact"
-              title="Контакти"
-              href="#footer"
-            >
-              Контакти
-            </a>
+            <a title="Команда" href="pageTeam.html"> Команда </a>
+          </li>
+
+          <li>
+            <a id="contact" title="Контакти" href="#footer"> Контакти </a>
           </li>
         </ul>
       </nav>
@@ -118,7 +69,30 @@
                 <a id="lang-main" href="#"
                   >Ua
                   <span>
-                    <img id="main-arrow" src="./img/arrowDrop.svg" alt="" />
+                    <svg
+                      id="default-arrow"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M9 11.25L5.25 7.5H12.75L9 11.25Z" fill="white" />
+                    </svg>
+
+                    <svg
+                      id="hidden-arrow"
+                      width="18"
+                      height="19"
+                      viewBox="0 0 18 19"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M9 11.6875L5.25 7.9375H12.75L9 11.6875Z"
+                        fill="#191919"
+                      />
+                    </svg>
                   </span>
                 </a>
                 <ul class="drop-menu">
@@ -145,11 +119,33 @@
         <span id="new-burger__text" class="burger-text"> Меню </span>
 
         <span class="burger-img">
-          <img
-            id="new-burger__thumb"
-            src="./img/burger-item.svg"
-            alt="Burger"
-          />
+          <svg
+            id="default-burger"
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1 16V14H19V16H1ZM1 11V9H19V11H1ZM1 6V4H19V6H1Z"
+              fill="#1D7E33"
+            />
+          </svg>
+
+          <svg
+            id="hidden-burger"
+            width="18"
+            height="12"
+            viewBox="0 0 18 12"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 12V10H18V12H0ZM0 7V5H18V7H0ZM0 2V0H18V2H0Z"
+              fill="white"
+            />
+          </svg>
         </span>
       </div>
     </div>
@@ -916,49 +912,10 @@
     </div>
 
     <div class="mobile-menu__content-items">
-      <div class="mobile-menu__content-list">
-        <a href="pageActivity.html" class="accordion">
-          Напрями діяльності
-
-          <!-- <span>
-            <img src="./img/mobile-drop.svg" alt="Drop" />
-          </span> -->
-        </a>
-        <!-- <div class="accordionDrop">
-          <ul>
-            <li>
-              <a href="#!">Біоенергетика</a>
-            </li>
-            <li>
-              <a href="#!">Вітроенергетика</a>
-            </li>
-            <li>
-              <a href="#!">Сонячна енергія</a>
-            </li>
-            <li>
-              <a href="#!">Гідроенергетика</a>
-            </li>
-            <li>
-              <a href="#!">Консультування</a>
-            </li>
-            <li>
-              <a href="#!">Екологія</a>
-            </li>
-            <li>
-              <a href="#!">Освіта</a>
-            </li>
-            <li>
-              <a href="#!">Соціальні питання</a>
-            </li>
-
-            <li>
-              <a href="pageActivity.html"> Всі напрями </a>
-            </li>
-          </ul>
-        </div> -->
-      </div>
-
       <ul>
+        <li>
+          <a href="pageActivity.html" class="accordion"> Напрями діяльності </a>
+        </li>
         <li>
           <a href="./pageProjects.html">Проєкти</a>
         </li>
