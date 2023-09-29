@@ -417,36 +417,7 @@ if (!document.getElementById("page1Identifier")) {
   \*******************************************/
 /***/ (() => {
 
-/* var cards = document.querySelectorAll(".activity-card");
 
-cards.forEach(function (card) {
-  card.addEventListener("mouseover", function () {
-    var btnText = card.querySelector(".btnText");
-    btnText.textContent = "Зв’язатись з нами";
-  });
-
-  card.addEventListener("mouseout", function () {
-    var btnText = card.querySelector(".btnText");
-    btnText.textContent = "Детальніше";
-  });
-});
- */
-
-/* var cards = document.querySelectorAll(".activity-card");
-
-cards.forEach(function (card) {
-  var btnText = card.querySelector(".btnText");
-
-  card.addEventListener("mouseover", function () {
-    btnText.textContent = "Зв’язатись з нами";
-    btnText.classList.add("hovered");
-  });
-
-  card.addEventListener("mouseout", function () {
-    btnText.textContent = "Детальніше";
-    btnText.classList.remove("hovered");
-  });
-}); */
 
 /***/ }),
 
@@ -633,9 +604,6 @@ var __webpack_exports__ = {};
   \************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_components */ "./src/js/_components.js");
-//import './_vendor';
-//import vars from './_vars';
-//import './_functions';
 
 })();
 
