@@ -298,6 +298,7 @@ input[type=submit] {
   transition: 0.1s linear;
   position: relative;
   overflow: hidden;
+  width: 212px;
 }
 .header__btn-link a::after {
   content: "";
@@ -1554,6 +1555,7 @@ header {
   transition: 0.2s linear;
   position: relative;
   overflow: hidden;
+  width: 212px;
 }
 .header__btn-link__main a::after {
   content: "";
@@ -1952,6 +1954,7 @@ header {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  max-height: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1961,6 +1964,8 @@ header {
   margin-top: auto;
   max-width: 255px;
   padding: 1px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85.5%, 92% 100%, 0 100%, 0 0);
+  clip-path: polygon(0 0, 100% 0, 100% 85.5%, 92% 100%, 0 100%, 0 0);
 }
 @media screen and (max-width: 375px) {
   .intro__content-cards__item-photo {
