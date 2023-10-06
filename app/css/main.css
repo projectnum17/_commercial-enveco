@@ -1991,6 +1991,7 @@ header {
 @media screen and (max-width: 590px) {
   .intro__content-cards__item-photo img {
     height: 100px;
+    width: 100%;
   }
 }
 
