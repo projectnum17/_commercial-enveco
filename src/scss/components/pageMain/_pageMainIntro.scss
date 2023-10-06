@@ -1,10 +1,6 @@
 .intro {
   position: relative;
   overflow: hidden;
-  //background: url(../img/intro-photo.png);
-  /* background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center; */
 
   margin-bottom: 140px;
   padding-bottom: 140px;
@@ -195,21 +191,24 @@
       max-width: 255px;
       padding: 1px;
       clip-path: polygon(0 0, 100% 0, 100% 85.5%, 92% 100%, 0 100%, 0 0);
-      // clip-path: polygon(0 0, 100% 0, 100% 89.4%, 92% 100%, 0 100%, 0 0);
 
       @media screen and (max-width: 375px) {
         max-width: 100%;
-        // clip-path: polygon(0 0, 100% 0, 100% 76.4%, 92% 100%, 0 100%, 0 0);
       }
 
       img {
         overflow: hidden;
-        //clip-path: polygon(0 0, 100% 0, 100% 89.4%, 92% 100%, 0 100%, 0 0);
+        width: 100%;
+        object-fit: cover;
+        clip-path: polygon(0 0, 100% 0, 100% 85.4%, 92% 100%, 0 100%, 0 0);
+        @media screen and (max-width: 590px) {
+          max-width: 100%;
+          clip-path: polygon(0 0, 100% 0, 100% 80.4%, 92% 100%, 0 100%, 0 0);
+        }
 
         @media screen and (max-width: 375px) {
           max-width: 100%;
           clip-path: polygon(0 0, 100% 0, 100% 79.4%, 93.4% 100%, 0 100%, 0 0);
-          // clip-path: polygon(0 0, 100% 0, 100% 76.4%, 92% 100%, 0 100%, 0 0);
         }
 
         @media screen and (max-width: 375px) {

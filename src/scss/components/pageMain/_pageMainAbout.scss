@@ -152,3 +152,29 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  /* Задайте желаемую ширину экрана */
+  #textBlock p:not(:first-child) {
+    display: none;
+  }
+
+  #textBlock p:first-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Количество отображаемых строк */
+    -webkit-box-orient: vertical;
+  }
+  #textBlock p.active {
+    overflow: initial;
+    text-overflow: initial;
+    display: block;
+  }
+}
+
+.about__content-descr {
+  .projects__cards-link a:hover span {
+    color: #000 !important;
+  }
+}

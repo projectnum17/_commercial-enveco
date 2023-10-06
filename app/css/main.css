@@ -1733,9 +1733,6 @@ header {
 .intro {
   position: relative;
   overflow: hidden;
-  /* background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center; */
   margin-bottom: 140px;
   padding-bottom: 140px;
 }
@@ -1974,6 +1971,18 @@ header {
 }
 .intro__content-cards__item-photo img {
   overflow: hidden;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85.4%, 92% 100%, 0 100%, 0 0);
+  clip-path: polygon(0 0, 100% 0, 100% 85.4%, 92% 100%, 0 100%, 0 0);
+}
+@media screen and (max-width: 590px) {
+  .intro__content-cards__item-photo img {
+    max-width: 100%;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 80.4%, 92% 100%, 0 100%, 0 0);
+    clip-path: polygon(0 0, 100% 0, 100% 80.4%, 92% 100%, 0 100%, 0 0);
+  }
 }
 @media screen and (max-width: 375px) {
   .intro__content-cards__item-photo img {
@@ -2238,6 +2247,28 @@ header {
 
 .about__content-descr .projects__cards-link a:hover {
   background: transparent;
+}
+
+@media (max-width: 768px) {
+  /* Задайте желаемую ширину экрана */
+  #textBlock p:not(:first-child) {
+    display: none;
+  }
+  #textBlock p:first-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Количество отображаемых строк */
+    -webkit-box-orient: vertical;
+  }
+  #textBlock p.active {
+    overflow: initial;
+    text-overflow: initial;
+    display: block;
+  }
+}
+.about__content-descr .projects__cards-link a:hover span {
+  color: #000 !important;
 }
 
 .develop {

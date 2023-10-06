@@ -464,38 +464,36 @@ if (document.getElementById("page1Identifier")) {
       }
     }
   });
-  function setupTextToggle() {
-    const textBlock = document.getElementById("textBlock");
+
+  //  ==================== CHANGE ===================
+
+  document.addEventListener("DOMContentLoaded", function () {
     const readMoreButton = document.getElementById("readMoreButton");
-    const originalText = textBlock.innerHTML;
-    const shortText = "Enveco — українська спеціалізована проектно-консалтингова компанія, що надає комплексні інноваційні ...";
-    let isShortened = true;
-    function toggleText(event) {
-      event.preventDefault(); // Предотвращаем стандартное действие браузера
-      if (isShortened) {
-        textBlock.innerHTML = originalText;
-        readMoreButton.innerHTML = "Приховати";
-        isShortened = false;
+    const showTextSpan = document.querySelector(".show-text");
+    const hideTextSpan = document.querySelector(".hide-text");
+    const textToToggle = document.querySelector("#textBlock p");
+    let isOpen = false;
+    readMoreButton.addEventListener("click", function (event) {
+      event.preventDefault();
+      isOpen = !isOpen;
+      textToToggle.classList.toggle("active", isOpen);
+      if (isOpen) {
+        const hiddenParagraphs = document.querySelectorAll("#textBlock p:not(:first-child)");
+        hiddenParagraphs.forEach(function (paragraph) {
+          paragraph.style.display = "block";
+        });
+        showTextSpan.style.display = "none";
+        hideTextSpan.style.display = "inline";
       } else {
-        textBlock.innerHTML = shortText;
-        readMoreButton.innerHTML = "Читати детальніше";
-        isShortened = true;
+        const hiddenParagraphs = document.querySelectorAll("#textBlock p:not(:first-child)");
+        hiddenParagraphs.forEach(function (paragraph) {
+          paragraph.style.display = "none";
+        });
+        showTextSpan.style.display = "inline";
+        hideTextSpan.style.display = "none";
       }
-    }
-    function checkWindowWidth() {
-      if (window.innerWidth <= 768) {
-        if (isShortened) {
-          textBlock.innerHTML = shortText;
-        }
-      } else {
-        textBlock.innerHTML = isShortened ? shortText : originalText;
-      }
-    }
-    checkWindowWidth();
-    readMoreButton.addEventListener("click", toggleText);
-    window.addEventListener("resize", checkWindowWidth);
-  }
-  setupTextToggle();
+    });
+  });
 }
 
 /***/ }),
